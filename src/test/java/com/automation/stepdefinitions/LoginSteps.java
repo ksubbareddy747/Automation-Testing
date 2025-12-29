@@ -36,7 +36,7 @@ public class LoginSteps {
     }
 
     @Then("User should navigate to Dashboard")
-    public void user_should_navigate_to_dashboard() {
+    public void user_should_navigate_to_dashboard() throws Exception {
         loginPage.login_success_or_not();
     }
     

@@ -41,9 +41,10 @@ public class LoginPage {
 		  LoginButton.click(); 
 	}
 	 
-	 public void login_success_or_not() {
+	 public void login_success_or_not() throws Exception {
 		 String expectedUrl="https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index";
 	    String actualUrl=driver.getCurrentUrl();
+	    Thread.sleep(2000);
 	    if(actualUrl.equals(expectedUrl)) {
 	    	System.out.println("Login Successfull");
 	    }

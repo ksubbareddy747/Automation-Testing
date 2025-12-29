@@ -23,7 +23,8 @@ public class AdminPage {
 	    @FindBy(xpath = "//button[text()=' Add ']")WebElement AddButton;
 	    @FindBy(xpath="/html/body/div/div[1]/div[2]/div[2]/div/div/form/div[1]/div/div[2]/input")WebElement JobTitleField;
 	    @FindBy(xpath="//button[text()=' Save ']")WebElement SaveButton;
-	    @FindBy(xpath="//div[text()='asdf']/../following-sibling::div[2]/child::div/child::button[1]")WebElement DeleteIcon;
+	    @FindBy(xpath="//div[text()='asdf']/../following-sibling::div[2]/child::div/child::button[2]")WebElement EditIcon;
+	    @FindBy(xpath="//div[text()='asdfasdf']/../following-sibling::div[2]/child::div/child::button[1]")WebElement DeleteIcon;
 	    @FindBy(xpath="/html/body/div/div[3]/div/div/div/div[3]/button[2]")WebElement YesDeleteButton;
 	    @FindBy(xpath="//p[text()='Success']/following-sibling::p")WebElement Successmessage;
 	    
@@ -57,7 +58,15 @@ public class AdminPage {
 	    public void clickSaveButton() {
 	    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	        wait.until(ExpectedConditions.elementToBeClickable(SaveButton)).click();
+	        
 	    
+	    }
+	    
+	    public void clickEditIcon() {
+	    	WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(10));
+	    	wait.until(ExpectedConditions.elementToBeClickable(EditIcon)).click();
+	    	wait.until(ExpectedConditions.elementToBeClickable(JobTitleField)).click();
+	    	JobTitleField.sendKeys("asdf");
 	    }
 	    public void clickDeleteIcon() {
 	    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));

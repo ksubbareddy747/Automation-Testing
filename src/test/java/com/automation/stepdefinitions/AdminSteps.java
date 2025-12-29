@@ -36,6 +36,14 @@ public void user_click_on_save_button() {
     adminPage. verifysuccessmessage();
  }
 
+// edit jobtitle
+
+@Then("User click on edit icon and update details")
+public void user_click_on_edit_icon_and_update_details() {
+    adminPage.clickEditIcon();
+    
+}
+
 
 //delete jobtitle
 @Then("User click on delete icon")
